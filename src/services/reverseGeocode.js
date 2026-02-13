@@ -1,14 +1,13 @@
 export async function reverseGeocode(lat, lng) {
   const url =
-    "https://nominatim.openstreetmap.org/reverse?" +
+    "/api/reverse?" +
     new URLSearchParams({
       lat: String(lat),
       lon: String(lng),
-      format: "json",
     });
 
   const res = await fetch(url);
-  if (!res.ok) throw new Error("Falha no reverse geocode");
+  if (!res.ok) throw new Error(`Erro reverse: ${res.status}`);
 
   const data = await res.json();
   return data.display_name ?? "Local salvo";

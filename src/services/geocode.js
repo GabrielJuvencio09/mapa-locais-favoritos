@@ -1,21 +1,13 @@
 export async function geocodeAddress(query) {
   const url =
-    "/nominatim/search?" +
+    "/api/geocode?" +
     new URLSearchParams({
       q: query,
-      format: "json",
-      addressdetails: "1",
       limit: "8",
     });
 
-  const res = await fetch(url, {
-    method: "GET",
-    // NÃO coloque User-Agent aqui no browser
-  });
-
-  if (!res.ok) {
-    throw new Error(`Erro Nominatim: ${res.status}`);
-  }
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Erro geocode: ${res.status}`);
 
   const data = await res.json();
 
