@@ -19,8 +19,7 @@ const SearchBar = () => {
   const isSaved = (lat, lng) => {
     return favorites.some(
       (fav) =>
-        Math.abs(fav.lat - lat) < 0.0001 &&
-        Math.abs(fav.lng - lng) < 0.0001
+        Math.abs(fav.lat - lat) < 0.0001 && Math.abs(fav.lng - lng) < 0.0001,
     );
   };
 
@@ -62,23 +61,27 @@ const SearchBar = () => {
       ref={searchRef}
       className="w-full bg-white p-4 border-b shadow-sm relative z-[2000]"
     >
-      <form onSubmit={handleSubmit} className="flex gap-2 relative">
-        <input
-          className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-          placeholder="Buscar endereço (ex: Av. Paulista)"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
+      <form onSubmit={handleSubmit} className="flex gap-2">
+        <div className="flex-1 relative">
+          <input
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+            placeholder="Buscar endereço (ex: Av. Paulista)"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
 
-        {query && (
-          <button
-            type="button"
-            onClick={handleClear}
-            className="absolute right-24 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-          >
-            ✕
-          </button>
-        )}
+          {query && (
+            <button
+              type="button"
+              onClick={handleClear}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              aria-label="Limpar busca"
+              title="Limpar"
+            >
+              ✕
+            </button>
+          )}
+        </div>
 
         <button
           type="submit"
@@ -90,9 +93,7 @@ const SearchBar = () => {
       </form>
 
       {mutation.isError && (
-        <p className="text-red-500 text-sm mt-2">
-          Erro ao buscar.
-        </p>
+        <p className="text-red-500 text-sm mt-2">Erro ao buscar.</p>
       )}
 
       {mutation.data && mutation.data.length > 0 && (
