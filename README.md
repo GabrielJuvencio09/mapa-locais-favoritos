@@ -96,8 +96,24 @@ Interface limpa e responsiva
 
 📂 Como Rodar o Projeto Localmente
 
+1. Clone o repositório:
 
+git clone https://github.com/GabrielJuvencio09/mapa-locais-favoritos.git
 
+2. Acesse a pasta do projeto:
+
+cd mapa-locais-favoritos
+
+3. Instale as dependências:
+
+npm install
+
+4. Rode o projeto:
+
+npm run dev
+
+O projeto estará disponível em:
+http://localhost:5173
 
 
 📌 Possíveis Melhorias Futuras
@@ -112,8 +128,16 @@ Adicionar testes automatizados
 
 Melhorar feedback visual para estados de erro
 
-📎 Considerações Finais
+ Considerações Finais
 
-Durante o desenvolvimento, busquei manter o código organizado, com separação de responsabilidades e componentes reutilizáveis.
+Durante o desenvolvimento, busquei manter o código organizado, com separação clara de responsabilidades e componentes reutilizáveis.
 
-Como desenvolvedor em início de carreira, meu objetivo foi aplicar boas práticas, utilizar ferramentas adequadas para gerenciamento de estado e requisições, além de entregar uma aplicação funcional e bem estruturada.
+Como desenvolvedor em início de carreira, meu objetivo foi aplicar boas práticas, escolher ferramentas adequadas para gerenciamento de estado e requisições e entregar uma aplicação funcional, responsiva e bem estruturada.
+
+Este projeto foi uma ótima oportunidade para consolidar conceitos importantes de React, integração com APIs e organização de aplicações front-end.
+
+🔗 Deploy
+
+Aplicação publicada em:
+https://mapa-locais-favoritos.vercel.app
+

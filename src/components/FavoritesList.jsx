@@ -8,7 +8,7 @@ const { favorites, removeFavorite, clearFavorites, setSelectedFavorite, selected
     <aside className="h-full bg-white border-l border-gray-200 flex flex-col">
       {/* Header fixo */}
       <div className="sticky top-0 z-10 bg-white/90 backdrop-blur border-b border-gray-100 p-6">
-        <h2 className="text-2xl font-bold text-gray-900">Os Meus Locais</h2>
+        <h2 className="text-2xl font-bold text-gray-900">Meus Locais Favoritos</h2>
         <p className="text-sm text-gray-500 mt-1">
           Favoritos salvos neste navegador
         </p>
